@@ -27,7 +27,7 @@ mainWindow.rowconfigure(3, weight=1)
 # Creating a ListBox to show the results
 boxOfResults = tkinter.Listbox(mainWindow, font=("Comic Sans MS",20))
 boxOfResults.grid(row=0, column=0, sticky="nwes", rowspan=8)
-boxOfResults.config(border=2, relief="sunken", )
+boxOfResults.config(border=2, relief="sunken")
 
 # Creating Scroll Bar
 scrollBar = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=boxOfResults.yview)
