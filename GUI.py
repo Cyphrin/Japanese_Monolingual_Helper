@@ -8,7 +8,7 @@ import Antonym
 
 # Creating a window
 mainWindow = tkinter.Tk()
-mainWindow.title("Monolingual Helper")
+mainWindow.title("Monolingual Helper ")
 mainWindow.geometry("500x300-8-200")
 mainWindow["padx"] = 8
 mainWindow["pady"] = 8
@@ -39,6 +39,8 @@ wordLabel = tkinter.Label(mainWindow, text="Enter Word")
 wordLabel.grid(row=0, column=2, sticky="ws")
 wordEntry = tkinter.Entry(mainWindow, font=('Comic Sans MS',15),)
 wordEntry.grid(row=1, column=2, sticky="wn")
+versionLabel = tkinter.Label(mainWindow, text="Beta", font=('Comic Sans MS',15))
+versionLabel.grid(row=4, column=3, stick="ws")
 
 # # Creating Radio Buttons for Synonym & Antonym
 rbValue = tkinter.IntVar()
@@ -47,8 +49,8 @@ rbValue.set(1)
 synonymRadio = tkinter.Radiobutton(mainWindow, text="Synonym", value=1, variable=rbValue)
 antonymRadio = tkinter.Radiobutton(mainWindow, text="Antonym", value=2, variable=rbValue)
 
-synonymRadio.grid(row=1, column=2, sticky="w")
-antonymRadio.grid(row=1, column=2, sticky="e")
+synonymRadio.grid(row=2, column=2, sticky="wn")
+antonymRadio.grid(row=2, column=2, sticky="en")
 
 # Creating a button
 def retrieveSynoOrAnto():
@@ -67,6 +69,6 @@ def retrieveSynoOrAnto():
 			boxOfResults.insert(tkinter.END, j)
 
 button = tkinter.Button(mainWindow, text="Get List", command=retrieveSynoOrAnto)
-button.grid(row=2, column=2, sticky="new")
+button.grid(row=3, column=2, sticky="new")
 
 mainWindow.mainloop()
