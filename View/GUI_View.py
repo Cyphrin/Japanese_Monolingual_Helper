@@ -24,7 +24,7 @@ class View(tk.Tk):
 		self.minsize(610, 415)
 		self.maxsize(610, 415)
 		self.color = "#c11010"
-		self.image = ImageTk.PhotoImage(file="./red.png")
+		self.image = ImageTk.PhotoImage(file="Assets/red.png")
 		self.value_var = tk.StringVar()
 		self._makeMainFrame()
 		self._innerFrames()
