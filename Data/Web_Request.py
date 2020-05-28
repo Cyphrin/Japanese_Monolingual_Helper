@@ -20,4 +20,3 @@ class CheckWebRequest:
 			return err  # "Something is wrong"
 		else:
 			return self.makeCall
-
