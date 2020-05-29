@@ -97,6 +97,9 @@ class View(tk.Tk):
 
 	# Resets the listBox and displays the data on each line
 	def showResults(self, words):
+		lineNumForEachWord = 0
 		self.boxOfResults.delete(0, tk.END)
+
 		for i in words:
-			self.boxOfResults.insert(tk.END, i)
+			lineNumForEachWord += 1
+			self.boxOfResults.insert(tk.END, str(lineNumForEachWord) + ". " + i)

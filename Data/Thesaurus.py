@@ -10,7 +10,7 @@ class Thesaurus:
 		self.webTag1 = ""
 		self.webTag2 = ""
 		self.webTag3 = ""
-		self.listFromThesaurus = []
+
 
 	# Makes call to specified site with a specified search word and
 	# returns the html of the site based on tags the user inputs
@@ -24,6 +24,7 @@ class Thesaurus:
 
 	# Loops through Tags
 	def loopThroughThesaurus(self):
+		self.listFromThesaurus = []
 
 		# Loops through tags and grabs all the words that don't have tags.
 		for self.container1 in self.pullTagsFromSite:
@@ -41,8 +42,8 @@ class Thesaurus:
 				self.listFromThesaurus = list(dict.fromkeys(self.listFromThesaurus))
 
 
-		self.almost = [removingWhiteSpace.strip(' ') for removingWhiteSpace in self.listFromThesaurus]
-		self.finalList = list(dict.fromkeys(self.almost)) # Removes any duplicate words in list
+		self.almostList = [removingWhiteSpace.strip(' ') for removingWhiteSpace in self.listFromThesaurus]
+		self.finalList = list(dict.fromkeys(self.almostList)) # Removes any duplicate words in list
 		return self.finalList
 
 
