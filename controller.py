@@ -17,7 +17,7 @@ class Controller(tk.Listbox):
 	def main(self):
 		self.view.main()
 
-	def onButtonClick(self, caption):
+	def onButtonClick(self):
 		self.resultsBox()
 
 	# This function makes a call From Data.Thesaurus to the Thesaurus class to

@@ -82,7 +82,7 @@ class View(tk.Tk):
 	def enterButton(self):
 		caption = ""
 		self.BigBtn = tk.Button(self.rightLowerFrame, text="Get List",
-		                        command=(lambda button=caption: self.controller.onButtonClick(button)))
+		                        command=(lambda: self.controller.onButtonClick()))
 		self.BigBtn.place(relx=0, rely=0.35, relwidth=1, relheight=0.6)
 
 	# Creates the ListBox to that will display the data
