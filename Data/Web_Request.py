@@ -1,10 +1,10 @@
 import requests
 
+
 class CheckWebRequest:
 
 	def __init__(self):
 		self.completedWebsite = ""
-
 
 	def connectToWebsite(self):
 		try:
@@ -13,7 +13,7 @@ class CheckWebRequest:
 		except requests.exceptions.Timeout as errt:
 			return errt  # "Timed Out"
 		except requests.exceptions.ConnectionError as errc:
-			return errc   # "Connection Error"
+			return errc  # "Connection Error"
 		except requests.exceptions.HTTPError as errh:
 			return errh  # "HTTP Error"
 		except requests.exceptions.RequestException as err:
