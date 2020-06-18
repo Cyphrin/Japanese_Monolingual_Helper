@@ -26,7 +26,7 @@ class View(tk.Tk):
 		self.makeEntry()
 		self.createRadioButtons()
 		self.enterButton()
-		self.displayResultsBox()
+		self.tabPage()
 
 	def main(self):
 		self.mainloop()
@@ -49,6 +49,17 @@ class View(tk.Tk):
 
 		self.rightLowerFrame = tk.Frame(self.main_frm, bg=self.color, bd=3)
 		self.rightLowerFrame.place(relx=0.60, rely=0.5, relwidth=0.37, relheight=0.25)
+
+	def tabPage(self):
+		self.tabControl = ttk.Notebook(self.leftFrame)
+		self.tab1 = ttk.Frame(self.tabControl)
+		self.tab2 = ttk.Frame(self.tabControl)
+
+		self.tabControl.add(self.tab1, text="Words")
+		self.tabControl.add(self.tab2, text="Compared")
+
+		self.tabControl.pack(expand=1, fill="both", padx=2, pady=2)
+
 
 	# Creates the word entry box with label
 	def makeEntry(self):
@@ -80,19 +91,18 @@ class View(tk.Tk):
 
 	# Creates the Button to start the data retrieve process.
 	def enterButton(self):
-		caption = ""
 		self.BigBtn = tk.Button(self.rightLowerFrame, text="Get List",
 		                        command=(lambda: self.controller.onButtonClick()))
 		self.BigBtn.place(relx=0, rely=0.35, relwidth=1, relheight=0.6)
 
 	# Creates the ListBox to that will display the data
-	def displayResultsBox(self):
-		self.boxOfResults = tk.Listbox(self.leftFrame, font=("Comic Sans MS", 20))
+	def displayResultsBox(self, frameNeeded):
+		self.frameNeeded = frameNeeded
+		self.boxOfResults = tk.Listbox(self.frameNeeded, font=("Comic Sans MS", 20))
 		self.boxOfResults.place(relx=0.01, rely=0.01, relheight=0.98, relwidth=0.925)
 
-		self.scrollBar = tk.Scrollbar(self.leftFrame, orient=tk.VERTICAL, command=self.boxOfResults.yview, bg="yellow",
-		                              troughcolor="yellow")
-		self.scrollBar.place(relx=0.94, rely=0.01, relheight=0.98)  # grid(row=0, column=1, sticky="nse", rowspan=8)
+		self.scrollBar = tk.Scrollbar(self.frameNeeded, orient=tk.VERTICAL, command=self.boxOfResults.yview)
+		self.scrollBar.place(relx=0.94, rely=0.01, relheight=0.98)
 		self.boxOfResults["yscrollcommand"] = self.scrollBar.set
 
 	# Resets the listBox and displays the data on each line
