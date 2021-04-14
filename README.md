@@ -49,7 +49,7 @@ pip install python3.8
    <img src="images/image2.png" width="500" >
 5. NOTE: If the japanese word you have chosen doesn't seem to appear in the text feild after selection press enter again and the word should appear. Choose either Synonym or Antonym and click the Big Button.
 
-6. The data should appear in the box to the left. You should be able to sroll the data as you would like. 
+6. The data should appear in the box to the left. You should be able to scroll the data as you would like. 
 
    <img src="images/image3.png" width="500" >
 
